@@ -152,3 +152,6 @@
 [submodule "bundle/vim-rvm"]
 	path = bundle/vim-rvm
 	url = git://github.com/tpope/vim-rvm.git
+[submodule "bundle/vim-python"]
+	path = bundle/vim-python
+	url = git://github.com/xandox/vim-python.git
