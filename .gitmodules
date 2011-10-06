@@ -155,3 +155,6 @@
 [submodule "bundle/vim-python"]
 	path = bundle/vim-python
 	url = git://github.com/xandox/vim-python.git
+[submodule "bundle/actionscript"]
+	path = bundle/actionscript
+	url = git://github.com/endel/actionscript.vim.git
