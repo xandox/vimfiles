@@ -232,7 +232,7 @@ if has("gui_running")
     set columns=115
 
     if has("gui_gnome")
-        set term=gnome-256color
+        set term=xterm-256color
         colorscheme railscasts
         set guifont=Monospace\ 10
     endif
@@ -256,7 +256,7 @@ else
 
     "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
-        set term=gnome-256color
+        set term=xterm-256color
         colorscheme railscasts
     else
         colorscheme default
