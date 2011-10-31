@@ -28,6 +28,8 @@ set number      "add line numbers
 set showbreak=...
 set wrap linebreak nolist
 
+set fileencodings=utf-8,windows-1251,cp-866,latin1
+
 "mapping for command key to map navigation thru display lines instead
 "of just numbered lines
 vmap <D-j> gj
@@ -60,6 +62,8 @@ set statusline+=%{fugitive#statusline()}
 
 "RVM
 set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
+" encoding
+set statusline+=[%{&fileencoding}]
 
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
