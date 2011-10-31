@@ -164,3 +164,6 @@
 [submodule "bundle/vim-cpp"]
 	path = bundle/vim-cpp
 	url = https://github.com/xandox/vim-cpp.git
+[submodule "bundle/vim-erlang"]
+	path = bundle/vim-erlang
+	url = git@github.com:xandox/vim-erlang.git
