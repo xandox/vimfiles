@@ -425,4 +425,4 @@ let g:user_zen_settings = {
   \  },
  \}
 
-autocmd BufRead,BufNewFile *.erl,*.hrl :set ts=8 sw=8 sts=8 noet
+autocmd BufNewFile,BufRead *.erl,*.hrl set ts=8 sw=8 sts=8 noet
