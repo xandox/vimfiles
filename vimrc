@@ -182,8 +182,9 @@ function! s:Median(nums)
 endfunction
 
 "indent settings
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set autoindent
 
@@ -263,7 +264,12 @@ else
         set term=xterm-256color
         colorscheme railscasts
     else
-        colorscheme default
+        if $TERM == 'xterm'
+            set term=xterm-256color
+            colorscheme railscasts
+        else
+            colorscheme default
+        endif
     endif
 endif
 
@@ -426,3 +432,19 @@ let g:user_zen_settings = {
  \}
 
 autocmd BufNewFile,BufRead *.erl,*.hrl set ts=8 sw=8 sts=8 noet
+"
+" when press { + Enter, the {} block will expand.
+imap {<CR> {}<ESC>i<CR><ESC>O
+
+" NERDTree settings
+nmap wm :NERDTree<cr>
+let NERDTreeIgnore=['\.swp$']
+
+nnoremap <Esc>A <up>
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
+inoremap <Esc>A <up>
+inoremap <Esc>B <down>
+inoremap <Esc>C <right>
+inoremap <Esc>D <left>
