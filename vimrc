@@ -304,6 +304,10 @@ let g:ragtag_global_maps = 1
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
+"syntastic c settings
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_auto_refresh_includes = 1
+
 "key mapping for vimgrep result navigation
 map <A-o> :copen<CR>
 map <A-q> :cclose<CR>
@@ -431,7 +435,7 @@ let g:user_zen_settings = {
   \  },
  \}
 
-autocmd BufNewFile,BufRead *.erl,*.hrl set ts=8 sw=8 sts=8 noet
+autocmd BufNewFile,BufRead *.erl,*.hrl set ts=4 sw=4 sts=4 noet
 "
 " when press { + Enter, the {} block will expand.
 imap {<CR> {}<ESC>i<CR><ESC>O
@@ -448,3 +452,16 @@ inoremap <Esc>A <up>
 inoremap <Esc>B <down>
 inoremap <Esc>C <right>
 inoremap <Esc>D <left>
+
+set exrc " enable per-directory .vimrc files
+set secure " disable unsafe commands in local .vimrc files
+
+
+function! PkgConfigIncludes(lib)
+    let Cmd = "pkg-config --cflags-only-I ".a:lib
+    let Res = system(Cmd)
+    let Res = substitute(Res, "\\n", " ", "g")
+    let Res1 = split(Res, "\-I\\|\\s\\+", 0)
+    return Res1
+endfunction
+
