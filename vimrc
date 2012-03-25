@@ -465,3 +465,16 @@ function! PkgConfigIncludes(lib)
     return Res1
 endfunction
 
+function! ErlLibIncludes(lib)
+    let Cmd = "erl -eval \"erlang:display(code:lib_dir(".a:lib.")), halt().\" -noshell"
+    let Res = system(Cmd)
+    let Res = substitute(Res, "\n", "", "g")
+    let Res = substitute(Res, "\"", "", "g")
+    let Res1 = split(Res) " I dont know why this need, but it dose not work without split
+    let Res2 = []
+    for S in Res1
+        let Res2 += [S."/include/"]
+    endfor
+    return Res2
+endfunction
+
