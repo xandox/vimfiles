@@ -478,3 +478,8 @@ function! ErlLibIncludes(lib)
     return Res2
 endfunction
 
+" CPP syntax settings
+if !exists("g:syntastic_cpp_compiler_options")
+    let g:syntastic_cpp_compiler_options = ""
+endif
+let g:syntastic_cpp_compiler_options .= ' -std=c++0x'
