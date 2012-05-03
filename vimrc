@@ -189,6 +189,7 @@ set expandtab
 set autoindent
 
 "folding settings
+set foldenable
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
@@ -478,3 +479,4 @@ function! ErlLibIncludes(lib)
     return Res2
 endfunction
 
+let g:syntastic_cpp_compiler_options = ' -std=c++0x'
