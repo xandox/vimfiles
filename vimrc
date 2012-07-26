@@ -457,6 +457,10 @@ inoremap <Esc>D <left>
 set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
 
+" disable middle mouse pasting
+:map <MiddleMouse> <Nop>
+:imap <MiddleMouse> <Nop>
+
 
 function! PkgConfigIncludes(lib)
     let Cmd = "pkg-config --cflags-only-I ".a:lib
